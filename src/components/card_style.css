@@ -1,0 +1,67 @@
+.movie-card {
+    width: 280px;
+    height: 140px;
+    padding: 20px;
+    margin: 15px;
+    background-color: #1e1e2f;
+    color: white;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #7c050b; 
+}
+
+.movie-card h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+--Ñ
+.movie-year {
+    margin: 5px;
+    font-size: 16px;
+    color: #bdbdbd;
+}
+
+.rating {
+  transition: color 0.3s ease;
+}
+
+.movie-card:hover .rating {
+  color: #22c55e; 
+  font-weight: bold;
+}
+
+.star {
+  display: inline-block; 
+  transition: transform 0.25s ease;
+}
+
+.movie-card:hover .star {
+  transform: scale(1.25); 
+}
+
+.movie-genre {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #e50914;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif; 
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(229, 9, 20, 0.5);
+  box-shadow: 0 10px 10px rgba(229, 9, 20, 0.15);
+  border-left: 4px solid #e50914; 
+  cursor: pointer;
+}
+
+.movie-card:hover .movie-genre {
+    background-color:  #9a070e;
+    transform: scale(1.05);
+}
+

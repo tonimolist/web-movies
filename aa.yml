@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # 1. Base de dades
+  database:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: botiga
+    volumes:
+      - dades-postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # 2. El teu backend en Java
+  backend:
+    build: ./el-meu-backend-java      # Utilitza un Dockerfile local
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database                     # S'assegura d'arrancar la BD abans
+    environment:
+      # Màgia de Compose: el nom del servei actua com a domini de xarxa!
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/botiga
+
+volumes:
+  dades-postgres:                    # Volum persistent perquè no es perdin dades
